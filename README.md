@@ -3,7 +3,11 @@ Complex shapes on osmdroid map control.
 
 ![Lines and arcs](device-2016-03-26-154123.png) ![Circle](device-2016-03-26-154151.png)
 
-## Usage:
+## Under the hood
+
+[ShapeAsPointsBuilder.java](osmdroid-shape-extention-lib/src/main/java/com/github/lassana/osmdroid_shape_extention/ShapeAsPointsBuilder.java).
+
+## Usage
 
     final Polygon polygon = new Polygon(this);
     final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder();
