@@ -1,7 +1,7 @@
 # osmdroid-shape-extention
 Complex shapes on osmdroid map control.
 
-![Lines and arcs](device-2016-03-26-154123.png) ![Circle](device-2016-03-26-154151.png)
+![Lines and arcs](device-2016-03-26-165748.png) ![Circle](device-2016-03-26-165815.png)
 
 ## Under the hood
 
