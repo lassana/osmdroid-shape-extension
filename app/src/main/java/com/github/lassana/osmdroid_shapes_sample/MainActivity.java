@@ -44,6 +44,26 @@ public class MainActivity extends AppCompatActivity {
         mapController.setCenter(startPoint);
 
         {
+            final List<GeoPoint> list = new ShapeAsPointsBuilder()
+                    .GRC(new GeoPoint(-37.68375, 175.31544))
+                    .GRC(new GeoPoint(-37.78622, 175.30456))
+                    .GRC(new GeoPoint(-37.85433, 175.30497))
+                    .GRC(new GeoPoint(-37.83211, 175.23553))
+                    .CWA(new GeoPoint(-37.68842, 175.28242),
+                         new GeoPoint(-37.84936, 175.33861),
+                         new GeoPoint(-37.68375, 175.31544),
+                         0d).toList();
+
+            final Polygon polygon = new Polygon(this);
+            polygon.setPoints(list);
+            polygon.setFillColor(0xA0FF00FF);
+            polygon.setStrokeColor(Color.MAGENTA);
+            polygon.setStrokeWidth(1f);
+            map.getOverlays().add(polygon);
+            map.invalidate();
+        }
+
+        {
             final Polygon polygon = new Polygon(this);
             final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder();
 

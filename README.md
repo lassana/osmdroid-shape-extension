@@ -1,7 +1,11 @@
 # osmdroid-shape-extention
 Complex shapes on osmdroid map control.
 
-![Lines and arcs](device-2016-03-26-165748.png) ![Circle](device-2016-03-26-165815.png)
+<div style="width: auto; height:533px; border: 13px solid #bed5cd; overflow-x: scroll; overflow-y: hidden; white-space: nowrap;">
+    <a href="device-2016-03-26-165748.png"><img src="device-2016-03-26-165748.png" height="533px"></a>
+    <a href="device-2016-03-26-165815.png"><img src="device-2016-03-26-165815.png" height="533px"></a>
+    <a href="device-2016-03-29-103718.png"><img src="device-2016-03-29-103718.png" height="533px"></a>
+</div>
 
 ## Under the hood
 
