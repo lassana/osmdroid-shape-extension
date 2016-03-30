@@ -61,7 +61,7 @@ public class ShapeAsPointsBuilder {
         double ffaz = f.azi1;
         double tfaz = (((ffaz < 0) && (t.azi1 < 0)) || (t.azi1 > 0)) ? t.azi1 : 360 + t.azi1;
 
-        while ((int)ffaz != Math.abs((int)tfaz)) {
+        while ((int)ffaz != (int)tfaz) {
             GeodesicData llb = wgs84.Direct(centerPoint.getLatitude(), centerPoint.getLongitude(), ffaz, f.s12);
             points.add(new GeoPoint(llb.lat2, llb.lon2));
             ffaz += 1;

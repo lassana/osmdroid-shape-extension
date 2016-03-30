@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     .toList();
             final Polygon polygon = new Polygon(this);
             polygon.setPoints(list);
-            polygon.setFillColor(0xA000FF00);
+            polygon.setFillColor(0x6000FF00);
             polygon.setStrokeColor(Color.GREEN);
             polygon.setStrokeWidth(1f);
             map.getOverlays().add(polygon);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
             final Polygon polygon = new Polygon(this);
             polygon.setPoints(list);
-            polygon.setFillColor(0xA0FF00FF);
+            polygon.setFillColor(0x60FF00FF);
             polygon.setStrokeColor(Color.MAGENTA);
             polygon.setStrokeWidth(1f);
             map.getOverlays().add(polygon);
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                              0.08333d);
 
             polygon.setPoints(shapeBuilder.toList());
-            polygon.setFillColor(0xA0FF00FF);
+            polygon.setFillColor(0x60FF00FF);
             polygon.setStrokeColor(Color.MAGENTA);
             polygon.setStrokeWidth(1f);
             map.getOverlays().add(polygon);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             shapeBuilder.CIR(new GeoPoint(-37.63036, 176.17192), 0.41 * 1852);
 
             polygon.setPoints(shapeBuilder.toList());
-            polygon.setFillColor(0xA00000FF);
+            polygon.setFillColor(0x600000FF);
             polygon.setStrokeColor(Color.BLACK);
             polygon.setStrokeWidth(1f);
             map.getOverlays().add(polygon);
