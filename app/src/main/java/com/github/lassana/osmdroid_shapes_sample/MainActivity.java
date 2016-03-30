@@ -10,10 +10,14 @@ import android.os.Bundle;
 import android.widget.Toast;
 import com.github.lassana.osmdroid_shape_extention.ShapeAsPointsBuilder;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.overlays.InfoWindow;
+import org.osmdroid.bonuspack.overlays.Marker;
+import org.osmdroid.bonuspack.overlays.MarkerInfoWindow;
 import org.osmdroid.bonuspack.overlays.Polygon;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Overlay;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,10 +44,41 @@ public class MainActivity extends AppCompatActivity {
 
         final IMapController mapController = map.getController();
         mapController.setZoom(9);
-        final GeoPoint startPoint = new GeoPoint(-36.66372, 174.69231);
+        final GeoPoint startPoint = new GeoPoint(-37.00453, 174.81372);
         mapController.setCenter(startPoint);
 
-        {
+        final boolean firstShape = true;
+        final boolean secondShape = true;
+        final boolean thirdShape = true;
+        final boolean fourthShape = true;
+
+        if (fourthShape) {
+            final List<GeoPoint> list = new ShapeAsPointsBuilder()
+                    .CWA(new GeoPoint(-36.47342, 175.11544), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30819, 175.43739), 0d)
+                    .GRC(new GeoPoint(-37.30819, 175.43739))
+                    .GRC(new GeoPoint(-37.48728, 175.36483))
+                    .GRC(new GeoPoint(-37.51325, 175.32081))
+                    .GRC(new GeoPoint(-37.53881, 175.23578))
+                    .GRC(new GeoPoint(-37.56194, 175.15847))
+                    .CWA(new GeoPoint(-37.57336, 174.9815), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30016, 174.18424), 0d)
+                    .GRC(new GeoPoint(-37.30016, 174.18424))
+                    .CCA(new GeoPoint(-37.23606, 174.38047), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-36.61017, 174.98258), 0d)
+                    .CCA(new GeoPoint(-36.61017, 174.98258), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.95164, 174.26911), 0d)
+                    .GRC(new GeoPoint(-36.95164, 174.26911))
+                    .CWA(new GeoPoint(-36.96623, 174.04694), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.47342, 175.11544), 0d)
+                    .GRC(new GeoPoint(-36.47342, 175.11544))
+                    .toList();
+            final Polygon polygon = new Polygon(this);
+            polygon.setPoints(list);
+            polygon.setFillColor(0xA000FF00);
+            polygon.setStrokeColor(Color.GREEN);
+            polygon.setStrokeWidth(1f);
+            map.getOverlays().add(polygon);
+            map.invalidate();
+
+        }
+
+        if (thirdShape) {
             final List<GeoPoint> list = new ShapeAsPointsBuilder()
                     .GRC(new GeoPoint(-37.68375, 175.31544))
                     .GRC(new GeoPoint(-37.78622, 175.30456))
@@ -63,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             map.invalidate();
         }
 
-        {
+        if (firstShape) {
             final Polygon polygon = new Polygon(this);
             final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder();
 
@@ -95,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             map.invalidate();
         }
 
-        {
+        if (secondShape) {
             final Polygon polygon = new Polygon(this);
             final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder();
 
