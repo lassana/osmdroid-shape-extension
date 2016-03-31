@@ -91,9 +91,8 @@ public class ShapeAsPointsBuilder {
         GeodesicData f = wgs84.Inverse(centerPoint.getLatitude(), centerPoint.getLongitude(), startPoint.getLatitude(), startPoint.getLongitude());
         GeodesicData t = wgs84.Inverse(centerPoint.getLatitude(), centerPoint.getLongitude(), endPoint.getLatitude(), endPoint.getLongitude());
 
-        double ffaz = f.azi1;
-        //double tfaz = t.azi1;
-        double tfaz = (((ffaz < 0) && (t.azi1 < 0)) || (t.azi1 > 0)) ? t.azi1 : 360 + t.azi1;
+        double ffaz = (f.azi1 < 0) ? 360 + f.azi1: f.azi1;
+        double tfaz = (t.azi1 < 0) ? 360 + t.azi1: t.azi1;
 
         while (Math.abs((int)ffaz) != Math.abs((int)tfaz)) {
             GeodesicData llb = wgs84.Direct(centerPoint.getLatitude(), centerPoint.getLongitude(), ffaz,  f.s12);
