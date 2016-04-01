@@ -9,6 +9,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name="com.github.lassana.osmdroid_shapes_sample.MainActivity">
+        </activity>
+        <activity android:name=".ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

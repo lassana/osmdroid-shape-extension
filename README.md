@@ -1,7 +1,7 @@
 # osmdroid-shape-extention
 Complex shapes on osmdroid map control.
 
-<pre><code><img src="device-2016-03-26-165748.png" height="533px" width="320px"> <img src="device-2016-03-26-165815.png" height="533px" width="320px"> <img src="device-2016-03-29-103718.png" height="533px" width="320px"> <img src="device-2016-03-31-124717.png" height="533px" width="320px"></code></pre>
+<pre><code><img src="media/device-2016-04-01-195435.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200104.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200128.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200138.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200147.png" height="512px" width="384px"></code></pre>
 
 ## Under the hood
 
