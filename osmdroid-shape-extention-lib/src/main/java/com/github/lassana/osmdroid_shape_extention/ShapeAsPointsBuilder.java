@@ -68,7 +68,7 @@ public class ShapeAsPointsBuilder {
      * </pre>
      */
     public ShapeAsPointsBuilder CWA(@NonNull GeoPoint startPoint, @NonNull GeoPoint centerPoint,
-                                    @NonNull GeoPoint endPoint, double radius) {
+                                    @NonNull GeoPoint endPoint) {
         points.add(startPoint);
 
         GeodesicData f = wgs84.Inverse(centerPoint.getLatitude(), centerPoint.getLongitude(), startPoint.getLatitude(), startPoint.getLongitude());
@@ -101,7 +101,7 @@ public class ShapeAsPointsBuilder {
      * </pre>
      */
     public ShapeAsPointsBuilder CCA(@NonNull GeoPoint startPoint, @NonNull GeoPoint centerPoint,
-                                    @NonNull GeoPoint endPoint, double radius) {
+                                    @NonNull GeoPoint endPoint) {
         points.add(startPoint);
 
         GeodesicData f = wgs84.Inverse(centerPoint.getLatitude(), centerPoint.getLongitude(), startPoint.getLatitude(), startPoint.getLongitude());
