@@ -2,25 +2,17 @@ package com.github.lassana.osmdroid_shapes_sample;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
-import com.github.lassana.osmdroid_shape_extention.ShapeAsPointsBuilder;
+
 import org.osmdroid.api.IMapController;
-import org.osmdroid.bonuspack.overlays.InfoWindow;
-import org.osmdroid.bonuspack.overlays.Marker;
-import org.osmdroid.bonuspack.overlays.MarkerInfoWindow;
 import org.osmdroid.bonuspack.overlays.Polygon;
-import org.osmdroid.bonuspack.overlays.Polyline;
-import org.osmdroid.bonuspack.utils.DouglasPeuckerReducer;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
-import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.Overlay;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             polygon.setFillColor(geoData.getFillColor());
             polygon.setStrokeColor(geoData.getStrokeColor());
             polygon.setStrokeWidth(geoData.getStrokeWidth());
+            //polygon.setPatternBMP(BitmapFactory.decodeResource(getResources(), com.github.lassana.osmbonuspack_gridpolygon_extention_lib.R.drawable.pattern));
             map.getOverlays().add(polygon);
             map.invalidate();
         }

@@ -18,18 +18,16 @@ public enum SampleGeoData {
 
     FIRST, SECOND, THIRD, FOURTH, FIFTH;
 
-    private int fillColor;
-
     public List<GeoPoint> getData() {
         final ShapeAsPointsBuilder builder = new ShapeAsPointsBuilder();
         switch (this.ordinal()) {
             case 0:
                 builder.GRC(new GeoPoint(-36.76736, 174.83433))
-                        .CWA(new GeoPoint(-36.93842, 174.55269), new GeoPoint(-36.87200, 174.48986), new GeoPoint(-36.80550, 174.42714), 0.08333d)
-                        .CCA(new GeoPoint(-36.68503, 174.62581), new GeoPoint(-36.66514, 174.64464), new GeoPoint(-36.68342, 174.66586), 0.02500d)
-                        .CCA(new GeoPoint(-36.66372, 174.69231), new GeoPoint(-36.64542, 174.67103), new GeoPoint(-36.65486, 174.69992), 0.02500d)
+                        .CWA(new GeoPoint(-36.93842, 174.55269), new GeoPoint(-36.87200, 174.48986), new GeoPoint(-36.80550, 174.42714))
+                        .CCA(new GeoPoint(-36.68503, 174.62581), new GeoPoint(-36.66514, 174.64464), new GeoPoint(-36.68342, 174.66586))
+                        .CCA(new GeoPoint(-36.66372, 174.69231), new GeoPoint(-36.64542, 174.67103), new GeoPoint(-36.65486, 174.69992))
                         .GRC(new GeoPoint(-36.66072, 174.74381))
-                        .CWA(new GeoPoint(-36.61911, 174.79094), new GeoPoint(-36.70106, 174.77139), new GeoPoint(-36.76736, 174.83433), 0.08333d);
+                        .CWA(new GeoPoint(-36.61911, 174.79094), new GeoPoint(-36.70106, 174.77139), new GeoPoint(-36.76736, 174.83433));
                 break;
             case 1:
                 builder.CIR(new GeoPoint(-37.63036, 176.17192), 0.41 * 1852);
@@ -39,29 +37,29 @@ public enum SampleGeoData {
                         .GRC(new GeoPoint(-37.78622, 175.30456))
                         .GRC(new GeoPoint(-37.85433, 175.30497))
                         .GRC(new GeoPoint(-37.83211, 175.23553))
-                        .CWA(new GeoPoint(-37.68842, 175.28242), new GeoPoint(-37.84936, 175.33861), new GeoPoint(-37.68375, 175.31544), 0d);
+                        .CWA(new GeoPoint(-37.68842, 175.28242), new GeoPoint(-37.84936, 175.33861), new GeoPoint(-37.68375, 175.31544));
                 break;
             case 3:
-                builder.CWA(new GeoPoint(-36.47342, 175.11544), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30819, 175.43739), 0d)
+                builder.CWA(new GeoPoint(-36.47342, 175.11544), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30819, 175.43739))
                         .GRC(new GeoPoint(-37.30819, 175.43739))
                         .GRC(new GeoPoint(-37.48728, 175.36483))
                         .GRC(new GeoPoint(-37.51325, 175.32081))
                         .GRC(new GeoPoint(-37.53881, 175.23578))
                         .GRC(new GeoPoint(-37.56194, 175.15847))
-                        .CWA(new GeoPoint(-37.57336, 174.9815), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30016, 174.18424), 0d)
+                        .CWA(new GeoPoint(-37.57336, 174.9815), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.30016, 174.18424))
                         .GRC(new GeoPoint(-37.30016, 174.18424))
-                        .CCA(new GeoPoint(-37.23606, 174.38047), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-36.61017, 174.98258), 0d)
-                        .CCA(new GeoPoint(-36.61017, 174.98258), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.95164, 174.26911), 0d)
+                        .CCA(new GeoPoint(-37.23606, 174.38047), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-36.61017, 174.98258))
+                        .CCA(new GeoPoint(-36.61017, 174.98258), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.95164, 174.26911))
                         .GRC(new GeoPoint(-36.95164, 174.26911))
-                        .CWA(new GeoPoint(-36.96623, 174.04694), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.47342, 175.11544), 0d)
+                        .CWA(new GeoPoint(-36.96623, 174.04694), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.47342, 175.11544))
                         .GRC(new GeoPoint(-36.47342, 175.11544));
                 break;
             case 4:
-                builder.CCA(new GeoPoint(-36.95164, 174.26911), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.98448, 174.29329), 0d)
-                        .CCA(new GeoPoint(-36.98448, 174.29329), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.23606, 174.38047), 0d)
+                builder.CCA(new GeoPoint(-36.95164, 174.26911), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.98448, 174.29329))
+                        .CCA(new GeoPoint(-36.98448, 174.29329), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.23606, 174.38047))
                         .GRC(new GeoPoint(-37.23606, 174.38047))
-                        .CWA(new GeoPoint(-37.30016, 174.18424), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.03146, 174.08486), 0d)
-                        .CWA(new GeoPoint(-37.03146, 174.08486), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.96623, 174.04694), 0d)
+                        .CWA(new GeoPoint(-37.30016, 174.18424), new GeoPoint(-37.00453, 174.81372), new GeoPoint(-37.03146, 174.08486))
+                        .CWA(new GeoPoint(-37.03146, 174.08486), new GeoPoint(-36.78679, 174.63123), new GeoPoint(-36.96623, 174.04694))
                         .GRC(new GeoPoint(-36.96623, 174.04694))
                         .GRC(new GeoPoint(-36.95164, 174.26911));
                 break;
