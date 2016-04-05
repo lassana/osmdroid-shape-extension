@@ -1,13 +1,18 @@
-# osmdroid-shape-extention
-Complex shapes on osmdroid map control.
+#osmdroid-extentions
+
+Custom polygons on osmdroid map control.
+
+##[1. Complex shapes on osmdroid map control](osmdroid-shape-extention-lib).
+
+Complex shapes on osmdroid map.
 
 <pre><code><img src="media/device-2016-04-01-195435.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200104.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200128.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200138.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200147.png" height="512px" width="384px"></code></pre>
 
-## Under the hood
+####Under the hood:
 
 [ShapeAsPointsBuilder.java](osmdroid-shape-extention-lib/src/main/java/com/github/lassana/osmdroid_shape_extention/ShapeAsPointsBuilder.java).
 
-## Usage
+####Usage:
 
     // I filled the data manually, but it can be done more clever, of course.
     final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder()
@@ -24,10 +29,29 @@ Complex shapes on osmdroid map control.
     polygon.setFillColor(0x60FF00FF);
     polygon.setStrokeColor(Color.MAGENTA);
     polygon.setStrokeWidth(1f);
-    
+
     map.getOverlays().add(polygon);
     map.invalidate();
-    
+
+##[2. Drawing a grid inside OSMBonusPack Polygon](osmbonuspack-gridpolygon-extention-lib).
+
+![Screencast](https://i.stack.imgur.com/qtfEG.gif)
+
+####Implementation:
+
+[GridPolygon.java](osmbonuspack-gridpolygon-extention-lib/src/main/java/com/github/lassana/osmbonuspack_gridpolygon_extention_lib/GridPolygon.java).
+
+####Usage:
+
+    final GridPolygon polygon = new GridPolygon(context);
+    polygon.setPoints(geoData);
+    polygon.setFillColor(fillColor);
+    polygon.setStrokeColor(strokeColor);
+    polygon.setStrokeWidth(strokeWidth);
+    polygon.setPatternBMP(BitmapFactory.decodeResource(getResources(), R.drawable.pattern));
+    map.getOverlays().add(polygon);
+    map.invalidate();
+
 ##License
 
 [LGPLv3](LICENSE).
