@@ -54,4 +54,4 @@ Complex shapes on osmdroid map.
 
 ##License
 
-[LGPLv3](LICENSE).
+[The FreeBSD license](LICENSE).
