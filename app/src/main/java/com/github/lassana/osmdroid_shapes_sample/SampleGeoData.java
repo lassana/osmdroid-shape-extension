@@ -3,7 +3,7 @@ package com.github.lassana.osmdroid_shapes_sample;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
-import com.github.lassana.osmdroid_shape_extention.ShapeAsPointsBuilder;
+import com.github.lassana.osmdroid_shape_extension.ShapeAsPointsBuilder;
 
 import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.util.GeoPoint;

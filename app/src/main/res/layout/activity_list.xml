@@ -1,49 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="6dp"
+            android:text="@string/label_dataset"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/spinner_dataset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="6dp"
+            android:text="@string/label_style"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow>
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/btn_example_1"
-            android:text="Example #1"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content" />
+            android:id="@+id/button_open"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_weight="1"
+            android:text="@string/button_open" />
 
-        <Button
-            android:id="@+id/btn_example_2"
-            android:text="Example #2"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content" />
+    </TableRow>
 
-        <Button
-            android:id="@+id/btn_example_3"
-            android:text="Example #3"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_example_4"
-            android:text="Example #4"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/btn_example_5"
-            android:text="Example #5"
-            android:layout_gravity="center"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-</ScrollView>
+</TableLayout>

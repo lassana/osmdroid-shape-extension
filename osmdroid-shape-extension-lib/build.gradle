@@ -1,15 +1,15 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.github.lassana.osmdroid_shapes_sample"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,11 +20,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:rules:0.4'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:gridlayout-v7:23.2.1'
-    compile 'com.github.MKergall.osmbonuspack:OSMBonusPack:v5.7'
-    compile project(':osmdroid-shape-extension-lib')
-    compile project(':osmbonuspack-bitmappolygon-extension-lib')
+    compile 'org.osmdroid:osmdroid-android:5.1@aar'
+    compile 'net.sf.geographiclib:GeographicLib-Java:1.46'
 }

@@ -2,12 +2,15 @@ package com.github.lassana.osmdroid_shapes_sample;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.github.lassana.osmbonuspack_bitmappolygon_extension_lib.BitmapPolygon;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.overlays.Polygon;
@@ -22,7 +25,9 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     public static final String EXTRA_GEO_DATA_INDEX = "MainActivity.EXTRA_GEO_DATA_INDEX";
+    public static final String EXTRA_USE_BITMAPPOLYGON = "MainActivity.EXTRA_USE_BITMAPPOLYGON";
     private final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 0x124;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +55,20 @@ public class MainActivity extends AppCompatActivity {
             mapController.setZoom(geoData.getZoomLevel());
             mapController.setCenter(geoData.getCenter());
 
-            final Polygon polygon = new Polygon(this);
+            final boolean useBitmapPolygon = getIntent().getBooleanExtra(EXTRA_USE_BITMAPPOLYGON, false);
+            final Polygon polygon;
+            if (useBitmapPolygon) {
+                BitmapPolygon bitmapPolygon = new BitmapPolygon(this);
+                bitmapPolygon.setPatternBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pattern));
+                polygon = bitmapPolygon;
+            } else {
+                polygon = new Polygon(this);
+            }
             polygon.setPoints(geoData.getData());
             polygon.setFillColor(geoData.getFillColor());
             polygon.setStrokeColor(geoData.getStrokeColor());
             polygon.setStrokeWidth(geoData.getStrokeWidth());
-            //polygon.setPatternBMP(BitmapFactory.decodeResource(getResources(), com.github.lassana.osmbonuspack_gridpolygon_extention_lib.R.drawable.pattern));
+
             map.getOverlays().add(polygon);
             map.invalidate();
         }
@@ -96,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
-            case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS:	{
+            case REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS: {
                 Map<String, Integer> perms = new HashMap<>();
                 perms.put(Manifest.permission.ACCESS_FINE_LOCATION, PackageManager.PERMISSION_GRANTED);
                 perms.put(Manifest.permission.WRITE_EXTERNAL_STORAGE, PackageManager.PERMISSION_GRANTED);
@@ -104,21 +117,21 @@ public class MainActivity extends AppCompatActivity {
                     perms.put(permissions[i], grantResults[i]);
                 }
                 Boolean location = perms.get(Manifest.permission.ACCESS_FINE_LOCATION)
-                                == PackageManager.PERMISSION_GRANTED;
-                Boolean storage  = perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                                == PackageManager.PERMISSION_GRANTED;
+                        == PackageManager.PERMISSION_GRANTED;
+                Boolean storage = perms.get(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_GRANTED;
                 if (location && storage) {
                     Toast.makeText(MainActivity.this, "All permissions granted", Toast.LENGTH_SHORT).show();
                 } else if (location) {
                     Toast.makeText(this, "Storage permission is required to store map tiles to reduce data usage " +
                             "and for offline usage.", Toast.LENGTH_LONG).show();
                 } else if (storage) {
-                    Toast.makeText(this,"Location permission is required to show the user's location on map.",
+                    Toast.makeText(this, "Location permission is required to show the user's location on map.",
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Storage permission is required to store map tiles to reduce " +
-                            "data usage and for offline usage." +
-                            "\nLocation permission is required to show the user's location on map.",
+                                    "data usage and for offline usage." +
+                                    "\nLocation permission is required to show the user's location on map.",
                             Toast.LENGTH_SHORT).show();
                 }
             }
