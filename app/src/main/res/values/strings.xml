@@ -3,6 +3,7 @@
     <string name="label_dataset">Dataset</string>
     <string name="label_style">Style</string>
     <string name="button_open">Open</string>
+    <string name="checkbox_show_centroid">Show centroid</string>
     <string-array name="spinner_dataset">
         <item>#0</item>
         <item>#1</item>

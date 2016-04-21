@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -20,6 +21,8 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        final AppCompatCheckBox centroidCheckBox = (AppCompatCheckBox) findViewById(R.id.checkbox_centroid);
+
         final Spinner datasetSpinner = (Spinner) findViewById(R.id.spinner_dataset);
         final Spinner styleSpinner = (Spinner) findViewById(R.id.spinner_style);
 
@@ -34,9 +37,11 @@ public class ListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final int index = datasetSpinner.getSelectedItemPosition();
                 final boolean isBitmapPolygon = styleSpinner.getSelectedItemPosition() == 1;
+                final boolean isShowingCentroid = centroidCheckBox.isChecked();
                 final Intent intent = new Intent(ListActivity.this, MainActivity.class);
                 intent.putExtra(MainActivity.EXTRA_GEO_DATA_INDEX, index);
                 intent.putExtra(MainActivity.EXTRA_USE_BITMAPPOLYGON, isBitmapPolygon);
+                intent.putExtra(MainActivity.EXTRA_SHOW_CENTROID, isShowingCentroid);
                 startActivity(intent);
             }
         });

@@ -51,6 +51,14 @@
 
     </TableRow>
 
+    <TableRow android:layout_width="match_parent">
+
+        <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_centroid"
+                android:text="@string/checkbox_show_centroid"/>
+
+    </TableRow>
+
     <TableRow>
 
         <android.support.v4.widget.Space
