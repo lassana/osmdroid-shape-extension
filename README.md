@@ -1,4 +1,4 @@
-#osmdroid-extensions
+#osmdroid-extensions [![Build Status](https://travis-ci.org/lassana/osmdroid-shape-extension.svg?branch=master)](https://travis-ci.org/lassana/osmdroid-shape-extension)
 
 Complex polygons on osmdroid map control.
 

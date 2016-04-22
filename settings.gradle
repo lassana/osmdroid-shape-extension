@@ -1,1 +1,1 @@
-include ':app', ':osmdroid-shape-extension-lib', ':osmbonuspack-bitmappolygon-extension-lib'
+include ':app', ':osmdroid-shape-extension-lib'

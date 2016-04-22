@@ -1,4 +1,4 @@
-package com.github.lassana.osmbonuspack_bitmappolygon_extension_lib;
+package com.github.lassana.osmdroid_shape_extension;
 
 import android.content.Context;
 import android.graphics.Bitmap;

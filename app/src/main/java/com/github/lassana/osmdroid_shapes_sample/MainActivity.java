@@ -7,12 +7,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.github.lassana.osmbonuspack_bitmappolygon_extension_lib.BitmapPolygon;
-
+import com.github.lassana.osmdroid_shape_extension.BitmapPolygon;
 import com.github.lassana.osmdroid_shape_extension.PolygonCentroid;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.overlays.Marker;
@@ -39,15 +39,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkPermissions();
         }
 
         final MapView map = (MapView) findViewById(R.id.mapView);
+        if (map == null) {
+            throw new RuntimeException("MapView instance not presented");
+        }
         map.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
@@ -63,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             final boolean useBitmapPolygon = getIntent().getBooleanExtra(EXTRA_USE_BITMAPPOLYGON, false);
             final Polygon polygon;
             if (useBitmapPolygon) {
-                BitmapPolygon bitmapPolygon = new BitmapPolygon(this);
+                final BitmapPolygon bitmapPolygon = new BitmapPolygon(this);
                 bitmapPolygon.setPatternBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.pattern));
                 polygon = bitmapPolygon;
             } else {

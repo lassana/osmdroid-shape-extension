@@ -12,8 +12,8 @@ import java.util.List;
  */
 public class PolygonCentroid {
 
-    private List<GeoPoint> points;
-    private int pointsSize;
+    private final List<GeoPoint> points;
+    private final int pointsSize;
 
     public PolygonCentroid(List<GeoPoint> points) {
         this.points = points;
