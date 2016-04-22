@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 final Marker marker = new Marker(map);
                 final GeoPoint centroid = new PolygonCentroid(geoData.getData()).centroid();
                 marker.setPosition(centroid);
+                marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                 marker.setInfoWindow(null);
                 map.getOverlays().add(marker);
             }
