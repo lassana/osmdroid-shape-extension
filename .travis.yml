@@ -26,8 +26,9 @@ android:
     - tools
     - platform-tools
     - build-tools-23.0.2
-    - android-22
+    - android-23
     - android-$EMULATOR_API_LEVEL
+    - extra
     - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
   licenses:
     # only approve the free software licenses
