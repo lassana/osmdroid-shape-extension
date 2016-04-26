@@ -35,7 +35,7 @@ Complex polygons on osmdroid map control.
 
 ##### Implementation:
 
-[BitmapPolygon.java](osmbonuspack-bitmappolygon-extension-lib/src/main/java/com/github/lassana/osmbonuspack_bitmappolygon_extension_lib/BitmapPolygon.java).
+[BitmapPolygon.java](osmdroid-shape-extension-lib/src/main/java/com/github/lassana/osmdroid_shape_extension/BitmapPolygon.java).
 
 ##### Usage:
 
