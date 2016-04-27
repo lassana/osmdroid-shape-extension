@@ -1,16 +1,8 @@
-#osmdroid-extensions [![Build Status](https://travis-ci.org/lassana/osmdroid-shape-extension.svg?branch=master)](https://travis-ci.org/lassana/osmdroid-shape-extension)
-
-Complex polygons on osmdroid map control.
+#osmdroid-shape-extensions [![Build Status](https://travis-ci.org/lassana/osmdroid-shape-extension.svg?branch=master)](https://travis-ci.org/lassana/osmdroid-shape-extension)
 
 ### 1. Complex shapes on osmdroid map control.
 
 <pre><code><img src="media/device-2016-04-01-195435.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200104.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200128.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200138.png" height="512px" width="384px"> <img src="media/device-2016-04-01-200147.png" height="512px" width="384px"></code></pre>
-
-##### Under the hood:
-
-[ShapeAsPointsBuilder.java](osmdroid-shape-extension-lib/src/main/java/com/github/lassana/osmdroid_shape_extension/ShapeAsPointsBuilder.java).
-
-##### Usage:
 
     final ShapeAsPointsBuilder shapeBuilder = new ShapeAsPointsBuilder()
             .GRC(new GeoPoint(-36.76736, 174.83433))
@@ -32,12 +24,6 @@ Complex polygons on osmdroid map control.
 ### 2. Drawing a bitmap (e.g. a grid) inside OSMBonusPack Polygon.
 
 ![Screencast](https://i.stack.imgur.com/qtfEG.gif)
-
-##### Implementation:
-
-[BitmapPolygon.java](osmdroid-shape-extension-lib/src/main/java/com/github/lassana/osmdroid_shape_extension/BitmapPolygon.java).
-
-##### Usage:
 
     final BitmapPolygon polygon = new BitmapPolygon(context);
     polygon.setPoints(geoData);
