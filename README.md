@@ -1,4 +1,4 @@
-# A few extensions for [omsdroid](https://github.com/osmdroid/osmdroid) [![Build Status](https://travis-ci.org/lassana/osmdroid-shape-extension.svg?branch=master)](https://travis-ci.org/lassana/osmdroid-shape-extension)
+# A few extensions for [omsdroid](https://github.com/osmdroid/osmdroid)
 
 ### 1. Drawing complex shapes on the osmdroid map control
 
