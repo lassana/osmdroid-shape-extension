@@ -30,7 +30,7 @@ android:
     - android-23
     - android-$EMULATOR_API_LEVEL
     - extra
-    - sys-img-x86-android-$EMULATOR_API_LEVEL
+    # - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
   licenses:
     # only approve the free software licenses
     - 'android-sdk-preview-license-52d11cd2'
@@ -45,12 +45,12 @@ script:
   # 'assemble' everything and run all checks that do not require a device/emulator
   - ./gradlew build -PdisablePreDex
   # start the emulator after the build to conserve memory
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+  # - echo no | android create avd --force -n test -t android-$EMULATOR_API_LEVEL
+  # - emulator -avd test -no-skin -no-audio -no-window &
+  # - android-wait-for-emulator
+  # - adb shell input keyevent 82 &
   # now run the tests that require a device/emulator
-  - ./gradlew connectedCheck -PdisablePreDex
+  # - ./gradlew connectedCheck -PdisablePreDex
 
 after_failure:
   - find * -name lint-results.xml | xargs cat
