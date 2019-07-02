@@ -30,7 +30,7 @@ android:
     - android-23
     - android-$EMULATOR_API_LEVEL
     - extra
-    - sys-img-armeabi-v7a-android-$EMULATOR_API_LEVEL
+    - sys-img-x86-android-$EMULATOR_API_LEVEL
   licenses:
     # only approve the free software licenses
     - 'android-sdk-preview-license-52d11cd2'
