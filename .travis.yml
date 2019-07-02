@@ -2,6 +2,7 @@
 sudo: false
 
 language: android
+dist: trusty
 
 env:
   global:
